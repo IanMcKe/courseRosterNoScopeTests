@@ -9,10 +9,9 @@ describe('CoursesController test', function() {
 
   it('assigns a course to CoursesController', function() {
     var course = { name: "PHP/JavaScript/Drupal", id: 1, students: [] };
-    var $scope = {};
-    var controller = $controller('CoursesCtrl', { $scope: $scope });
-    $scope.course = course;
-    expect($scope.course.name).toBe("PHP/JavaScript/Drupal");
+    var controller = $controller('CoursesCtrl', {});
+    controller.course = course;
+    expect(controller.course.name).toBe("PHP/JavaScript/Drupal");
   })
 });
 
@@ -27,12 +26,11 @@ describe('StudentsController test', function() {
 
   it('adds a student using the method .addStudent()', function() {
     var course = { name: "PHP/JavaScript/Drupal", id: 1, students: [] };
-    var $scope = {};
-    var controller = $controller('StudentsCtrl', { $scope: $scope });
-    $scope.course = course;
-    $scope.studentName = "Ian";
-    $scope.addStudent();
+    var controller = $controller('StudentsCtrl', {});
+    controller.course = course;
+    controller.studentName = "Ian";
+    controller.addStudent();
 
-    expect($scope.course.students[0].name).toBe("Ian");
+    expect(controller.course.students[0].name).toBe("Ian");
   });
 });
