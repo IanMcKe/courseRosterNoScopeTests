@@ -1,4 +1,5 @@
-courseRoster.controller('CoursesCtrl', function CoursesCtrl($scope, CoursesFactory) {
-  $scope.courses = CoursesFactory.courses;
-  $scope.CoursesFactory = CoursesFactory;
+courseRoster.controller('CoursesCtrl', function CoursesCtrl(CoursesFactory) {
+  var vm = this;
+  vm.courses = CoursesFactory.courses;
+  vm.CoursesFactory = CoursesFactory;
 });

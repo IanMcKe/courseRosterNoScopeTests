@@ -1,17 +1,17 @@
-<div ng-show="courses.length">
+<div ng-show="vm.courses.length">
   <h1>Here are all of your courses: <span sample-course></span></h1>
   <ul>
-    <li ng-repeat="item in courses">
-      <a ui-sref="courses.students( { courseId: item.id })">{{ item.name }}</a>
+    <li ng-repeat="item in vm.courses">
+      <a ui-sref="courses.students({ courseId: item.id })">{{ item.name }}</a>
     </li>
   </ul>
 </div>
 
 <div class="col-md-4">
   <h3>Add a new course</h3>
-  <form ng-submit="CoursesFactory.addCourse()" class="form-inline" role="form">
+  <form ng-submit="vm.CoursesFactory.addCourse()" class="form-inline" role="form">
     <div class="form-group">
-      <input type="text" ng-model="CoursesFactory.courseName" class="form-control" placeholder="Enter a course name">
+      <input type="text" ng-model="vm.CoursesFactory.courseName" class="form-control" placeholder="Enter a course name">
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
   </form>

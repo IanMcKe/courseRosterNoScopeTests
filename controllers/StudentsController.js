@@ -1,13 +1,14 @@
-courseRoster.controller('StudentsCtrl', function StudentsCtrl($scope, $stateParams, CoursesFactory, UtilitiesFactory) {
-  $scope.course = UtilitiesFactory.findById(CoursesFactory.courses, $stateParams.courseId);
-  $scope.addStudent = function() {
-    $scope.course.students.push({ name: $scope.studentName });
-    $scope.studentName = null;
+courseRoster.controller('StudentsCtrl', function StudentsCtrl($stateParams, CoursesFactory, UtilitiesFactory) {
+  var vm = this;
+  vm.course = UtilitiesFactory.findById(CoursesFactory.courses, $stateParams.courseId);
+  vm.addStudent = function() {
+    vm.course.students.push({ name: vm.studentName });
+    vm.studentName = null;
   };
 
-  // $scope.courseName = $scope.course.name;
+  // vm.courseName = vm.course.name;
 
-  $scope.alertUser = function(alertMessage) {
+  vm.alertUser = function(alertMessage) {
     alert(alertMessage);
   };
 });

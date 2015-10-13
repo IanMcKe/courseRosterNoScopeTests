@@ -9,12 +9,14 @@ courseRoster.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state('courses', {
     url: "/courses",
     templateUrl: "partials/courses.html",
-    controller: 'CoursesCtrl'
+    controller: 'CoursesCtrl',
+    controllerAs: 'vm'
   });
 
   $stateProvider.state('courses.students', {
     url: "/:courseId",
     templateUrl: "partials/courses.students.html",
-    controller: 'StudentsCtrl'
+    controller: 'StudentsCtrl',
+    controllerAs: 'vm'
   });
 });
