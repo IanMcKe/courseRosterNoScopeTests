@@ -16,7 +16,7 @@ describe('CoursesController test', function() {
     var controller = $controller('CoursesCtrl', {});
 
     expect(controller.courses[0].name).toBe("PHP/JavaScript/Drupal");
-  })
+  });
 });
 
 describe('StudentsController test', function() {
