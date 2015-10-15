@@ -12,7 +12,6 @@ describe('CoursesFactory test', function() {
   });
 
   it('adds a course using the method .addCourse()', function() {
-    var course = { name: "PHP/JavaScript/Drupal", id: 1, students: [] };
     CoursesFactory.courseName = "PHP/JavaScript/Drupal";
     CoursesFactory.addCourse();
     expect(CoursesFactory.courses[0].name).toBe("PHP/JavaScript/Drupal");
